@@ -1,0 +1,63 @@
+body {
+    background-color: #F6E7D8;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    justify-content: center;
+    display: flex;
+
+    margin-top: 50px;
+    width: 70%;
+}
+
+.activity-contain {
+    align-items: center;
+    width: 70%;
+    color: white;
+    justify-content: center;
+    display: flex;
+    transition: 0.4s;
+}
+
+.activity-contain:hover {
+    padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+#activity {
+    width: 60%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #874356;
+}
+
+#date_act:focus,
+#activity:focus {
+    border-color: none;
+    outline: none;
+}
+
+#activity::placeholder {
+
+    color: #874356;
+}
+
+#date_act {
+    background: transparent;
+    color: #C65D7B;
+    padding: 10px;
+    border: none;
+}
+
+.add-btn {
+    padding: 10px;
+    border: none;
+    background-color: #C65D7B;
+    color: white;
+}

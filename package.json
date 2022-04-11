@@ -1,0 +1,20 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "server": "lite-server --baseDir public",
+    "build": "babel src --out-dir public -w",
+    "start": "npm run server & npm run build"
+  },
+  "author": "Andrian-W",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
