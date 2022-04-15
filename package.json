@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "homepage": "todolist.com",
   "scripts": {
     "server": "lite-server --baseDir public",
     "build": "babel src --out-dir public -w",
-    "start": "npm run server & npm run build"
+    "start": "npm run server & npm run build",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "author": "Andrian-W",
   "license": "ISC",
@@ -16,5 +19,8 @@
     "@babel/preset-react": "^7.16.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
