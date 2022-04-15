@@ -1,6 +1,8 @@
 # To-Do-list
 Listing your activity per day
 
+![](img-web.png)
+
 ## Note
 This project not using create-react-app then it is required to manually setting the babel and some scripts on package.json
 
