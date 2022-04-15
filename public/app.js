@@ -45,7 +45,9 @@ function App() {
   React.useEffect(() => console.log(todo), [todo]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
     className: "content"
-  }, /*#__PURE__*/React.createElement("h1", null, "To Do List"), /*#__PURE__*/React.createElement("form", {
+  }, /*#__PURE__*/React.createElement("h1", null, "To Do List"), /*#__PURE__*/React.createElement("p", null, "Made By ", /*#__PURE__*/React.createElement("a", {
+    href: "https://github.com/Andrian-W"
+  }, "Andrian-W")), /*#__PURE__*/React.createElement("form", {
     className: "activity-contain",
     onSubmit: addData
   }, /*#__PURE__*/React.createElement("div", {

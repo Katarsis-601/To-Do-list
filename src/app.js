@@ -51,6 +51,9 @@ function App() {
     <>
       <section className="content">
         <h1>To Do List</h1>
+        <p>
+          Made By <a href="https://github.com/Andrian-W">Andrian-W</a>
+        </p>
         <form className="activity-contain" onSubmit={addData}>
           <div className="inputActivity-contain">
             <input
