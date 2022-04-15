@@ -9,17 +9,24 @@ function App() {
   const [date, setDate] = React.useState("");
   const [todo, setTodo] = React.useState([]);
 
-  function deleteData(id) {
-    const dataAfterFilter = todo.filter(data => {
-      return data.id != id;
+  function deleteData(index) {
+    const dataAfterFilter = todo.filter((data, i) => {
+      return i != index;
     });
     setTodo(dataAfterFilter);
+  }
+
+  function sortByDate() {
+    const sortedData = [...todo].sort((a, b) => {
+      return a.date_added - b.date_added;
+    });
+    setTodo(sortedData);
   }
 
   function addData(event) {
     event.preventDefault();
     let data = {
-      id: Date.now(),
+      date_added: Date.parse(date),
       activity,
       activity2,
       activity3,
@@ -89,7 +96,13 @@ function App() {
   }), /*#__PURE__*/React.createElement("button", {
     type: "submit",
     className: "add-btn"
-  }, "Add Activity")), /*#__PURE__*/React.createElement("ul", null, todo.map((data, i) => /*#__PURE__*/React.createElement("li", {
+  }, "Add Activity")), /*#__PURE__*/React.createElement("div", {
+    className: "sortContainer"
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "recentlySort",
+    onClick: sortByDate
+  }, "Sort By Date")), /*#__PURE__*/React.createElement("ul", null, todo.map((data, i) => /*#__PURE__*/React.createElement("li", {
     key: i
   }, /*#__PURE__*/React.createElement("p", {
     className: "date_act"
@@ -106,7 +119,7 @@ function App() {
   }, data.activity5), /*#__PURE__*/React.createElement("button", {
     className: "delete",
     onClick: () => {
-      deleteData(data.id);
+      deleteData(i);
     }
   }, "Delete"))))));
 }

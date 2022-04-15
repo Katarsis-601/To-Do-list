@@ -10,18 +10,26 @@ function App() {
   const [date, setDate] = React.useState("");
   const [todo, setTodo] = React.useState([]);
 
-  function deleteData(id) {
-    const dataAfterFilter = todo.filter((data) => {
-      return data.id != id;
+  function deleteData(index) {
+    const dataAfterFilter = todo.filter((data, i) => {
+      return i != index;
     });
     setTodo(dataAfterFilter);
+  }
+
+  function sortByDate() {
+    const sortedData = [...todo].sort((a, b) => {
+      return a.date_added - b.date_added;
+    });
+
+    setTodo(sortedData);
   }
 
   function addData(event) {
     event.preventDefault();
 
     let data = {
-      id: Date.now(),
+      date_added: Date.parse(date),
       activity,
       activity2,
       activity3,
@@ -38,6 +46,7 @@ function App() {
     setActivity5("");
   }
   React.useEffect(() => console.log(todo), [todo]);
+
   return (
     <>
       <section className="content">
@@ -100,6 +109,11 @@ function App() {
             Add Activity
           </button>
         </form>
+        <div className="sortContainer">
+          <button type="button" className="recentlySort" onClick={sortByDate}>
+            Sort By Date
+          </button>
+        </div>
         <ul>
           {todo.map((data, i) => (
             <li key={i}>
@@ -112,7 +126,7 @@ function App() {
               <button
                 className="delete"
                 onClick={() => {
-                  deleteData(data.id);
+                  deleteData(i);
                 }}
               >
                 Delete
